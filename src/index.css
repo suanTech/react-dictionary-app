@@ -1,13 +1,51 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 1.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  text-align: left;
+}
+
+button {
+  outline: none;
+  border: none;
+  background: transparent;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@font-face {
+  font-family: "inconsolata", monospace;
+  src: local("Inconsolata"),
+    url("./assets/fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "inter";
+  src: local("Inter"),
+    url("./assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "lora";
+  src: local("Lora"),
+    url("./assets/fonts/lora/Lora-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "lora-italic";
+  src: local("Lora"),
+    url("./assets/fonts/lora/Lora-Italic-VariableFont_wght.ttf")
+      format("truetype");
 }
