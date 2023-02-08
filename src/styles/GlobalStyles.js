@@ -1,11 +1,12 @@
 import { createGlobalStyle } from "styled-components";
+import { fontSize } from "./Theme";
 
 export const GlobalStyles = createGlobalStyle`
 
   body {
-    background-color: ${({ theme }) => theme.bg.hex};
+    background-color: ${({ theme }) => theme.bg};
     color: ${({ theme }) => theme.text};
-    transition: all .3s linear, width 1ms;
+    transition: all .1s linear, width 1ms;
   }
   input {
     background: transparent;
@@ -13,11 +14,18 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
     font-family: inherit;
   }
-  button {
-    font-family: inherit;
+  a {
+    text-decoration: none;
+    color: ${({theme}) => theme.text};
   }
   h1 {
-    font-size: 32px;
+    font-size: ${fontSize.headingL};
     margin-bottom: 8px;
+    @media (min-width: 768px){
+      font-size: ${fontSize.headingXL}
+    }
+  }
+  h2 {
+    font-size: ${fontSize.bodyM};
   }
 `;

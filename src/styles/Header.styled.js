@@ -1,31 +1,25 @@
 import styled, { keyframes } from "styled-components";
-import { colors } from "./Theme";
+import { colors, fontSize } from "./Theme";
 
+// dropdown box animation
 const rollDown = keyframes`
  from {
     transform: translateY(-10px);
-    height: 0;
     opacity: 0;
   }
   to {
     transform: translateY(0);
     opacity: 1;
-    height: 100%;
+    height: 110px;
   }
 `;
 
-const rollUp = keyframes`
- from {
-    transform: translateY(0);
-    opacity: 1;
-    height: 100%;
+const LogoImage = styled.img`
+  width: 29px;
+  @media(min-width: 768px) {
+    width: 32px;
   }
-  to {
-    transform: translateY(-10px);
-    opacity: 0;
-    height: 0;
-  }
-`;
+`
 // wrapper
 const NavbarWrapper = styled.div`
   display: flex;
@@ -44,17 +38,26 @@ const DropdownWrapper = styled.div`
   width: 100%;
   position: relative;
 `;
+
+// dropdown list
 const SelectListBox = styled.div`
   position: absolute;
-  text-align: right;
-  width: 80px;
-  left: 10px;
-  animation: ${rollUp} 0.2s;
-  transition: animation 0.3s;
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  right: 30px;
+  width: 30vw;
+  max-width: 130px;
+  height: 110px;
+  padding: 15px 10px;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: all 0.3s linear, background-color .1s linear;
+  box-shadow: ${({theme}) => `${theme.boxShadow}`} 0px 5px 15px;
+  ${'' /* box-shadow: ${({theme}) => `${theme.boxShadow}`} 0px 3px 10px, ${({theme}) => `${theme.boxShadow}`} 0px 16px 30px, ${({theme}) => `${theme.boxShadow}`} 0px 3px 4px, ${({theme}) => `${theme.boxShadow}`} 0px 3px 4px; */}
+  background-color: ${({theme}) => theme.boxBg};
   &.close {
     height: 0px;
-    overflow: hidden;
+    transform: translateY(-15px);
+    opacity: 0;
+    visibility: hidden;
   }
   &.open {
     animation: ${rollDown} 0.2s;
@@ -75,14 +78,15 @@ const SelectedItemWrapper = styled.div`
 const SelectListItems = styled.div`
   cursor: pointer;
   padding: 5px;
-  font-size: 0.9em;
-  background: ${({ theme }) => `rgba(${theme.bg.rgb}, 0.6)`};
+  font-size: ${fontSize.bodyS};
+  font-weight: 600;
   &:hover {
     color: ${colors.primary};
   }
 `;
 
 export {
+  LogoImage,
   NavbarWrapper,
   SettingsWrapper,
   DropdownWrapper,

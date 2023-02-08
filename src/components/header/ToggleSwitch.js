@@ -6,7 +6,7 @@ import {
   Switch,
   ToggleSwitchInput,
   ToggleSwitchLabel,
-} from "../../styles/ToggleSwitch.styled";
+} from "../../styles/toggleSwitch.styled";
 
 export const ToggleSwitch = ({ themeToggler }) => {
   const [checked, setChecked] = useState(false);

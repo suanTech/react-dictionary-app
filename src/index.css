@@ -5,23 +5,25 @@
   padding: 0;
   scroll-behavior: smooth;
 }
-
 body {
   margin: 0;
   padding: 1.5rem;
+  margin-bottom: 50px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   text-align: left;
 }
-
 button {
   outline: none;
   border: none;
   background: transparent;
+  font-family: inherit;
 }
-
+ul {
+  list-style: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

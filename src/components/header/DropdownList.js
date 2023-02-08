@@ -2,8 +2,13 @@ import { useState, useEffect } from "react";
 import ArrowIcon from "./../../assets/images/icon-arrow-down.svg";
 
 // styles
-import { DropdownWrapper, SelectedItemWrapper, SelectListBox, SelectListItems } from "../../styles/Header.styled";
-import { SelectedFont } from "../../styles/Text.styled";
+import {
+  DropdownWrapper,
+  SelectedItemWrapper,
+  SelectListBox,
+  SelectListItems,
+} from "../../styles/header.styled";
+import { SelectedFont } from "../../styles/text.styled";
 
 const fontFamilies = ["Sans Serif", "Serif", "Mono"];
 
@@ -13,17 +18,26 @@ export const DropdownList = () => {
   const displayDropdown = () => {
     setShow(!show);
   };
-  const fontFamily =
-    selectedFont === "Sans Serif"
-      ? "inter"
-      : selectedFont === "Serif"
-      ? "lora"
-      : selectedFont === "Mono"
-      ? "inconsolata"
-      : "";
+  const changeFontFamily = (selectedFont) => {
+    let fontFamily = "";
+    switch (selectedFont) {
+      case "Sans Serif":
+        fontFamily = "inter";
+        break;
+      case "Serif":
+        fontFamily = "lora";
+        break;
+      case "Mono":
+        fontFamily = "inconsolata";
+        break;
+      default: console.log('invalid fontFamily')
+    }
+    return fontFamily;
+  };
+
   useEffect(() => {
-    document.body.style.fontFamily = fontFamily;
-  }, [fontFamily]);
+    document.body.style.fontFamily = changeFontFamily(selectedFont);
+  }, [selectedFont]);
 
   return (
     <DropdownWrapper>
@@ -34,16 +48,17 @@ export const DropdownList = () => {
         <SelectedFont>{selectedFont}</SelectedFont>
         <ArrowIcon style={{ marginRight: "0" }} className="arrow-icon" />
       </SelectedItemWrapper>
-      <SelectListBox className={show ? "open" : "close"}>
-        {fontFamilies.map((fontFamily, i) => (
+      <SelectListBox className={!show ? "close" : "open"}>
+        {fontFamilies.map((select, i) => (
           <SelectListItems
             key={i}
             onClick={() => {
-              setSelectedFont(fontFamily);
+              setSelectedFont(select);
               setShow(!show);
             }}
+            style={{ fontFamily: changeFontFamily(select)}}
           >
-            {fontFamily}
+              {select}
           </SelectListItems>
         ))}
       </SelectListBox>

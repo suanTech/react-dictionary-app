@@ -2,34 +2,36 @@ import { useContext, useState } from "react";
 import SearchIcon from "../../assets/images/icon-search.svg";
 
 // styles
-import { SearchInput, SearchInputWrapper } from "../../styles/Form.styled";
-import { SearchBtn } from "../../styles/Buttons.styled";
+import {
+  StyledForm,
+  SearchInput,
+} from "../../styles/form.styled";
+import { SearchBtn } from "../../styles/buttons.styled";
 import { AppContext } from "../../context/Context";
 
-export const SearchForm = ({ fetchDefinitions }) => {
+export const SearchForm = () => {
   const [searchWord, setSearchWord] = useState("Hello");
-  const {setWord} = useContext(AppContext);
-  
+  const { setWord } = useContext(AppContext);
+
   const handleInputChange = (e) => {
-    setSearchWord(e.target.value)
-  }
+    setSearchWord(e.target.value);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     setWord(searchWord);
   };
 
   return (
-      <form onSubmit={handleSubmit}>
-        <SearchInputWrapper>
-          <SearchInput
-            placeholder="Search..."
-            value={searchWord}
-            onChange={handleInputChange}
-          />
-          <SearchBtn type="submit">
-            <SearchIcon />
-          </SearchBtn>
-        </SearchInputWrapper>
-      </form>
+    <StyledForm onSubmit={handleSubmit}>
+        <SearchInput
+          placeholder="Search..."
+          value={searchWord}
+          onClick={() => setSearchWord('')}
+          onChange={handleInputChange}
+        />
+        <SearchBtn type="submit">
+          <SearchIcon />
+        </SearchBtn>
+    </StyledForm>
   );
 };

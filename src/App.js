@@ -8,19 +8,22 @@ import { Result } from "./components/result/Result";
 
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { lightTheme, darkTheme } from "./styles/Theme";
+import { AppContainer } from "./styles/layout";
 
 function App() {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState("light");
   const themeToggler = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
-  
+
   return (
     <AppContextProvider>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <GlobalStyles />
-        <Header themeToggler={themeToggler}/>
-        <Result/>
+        <AppContainer>
+          <Header themeToggler={themeToggler} />
+          <Result />
+        </AppContainer>
       </ThemeProvider>
     </AppContextProvider>
   );

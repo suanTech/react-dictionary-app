@@ -1,21 +1,20 @@
 import { SearchForm } from "./SearchForm";
-import Logo from "./../../logo.svg";
+import logo from "./../../logo.svg?url";
 import { DropdownList } from "./DropdownList";
 import { ToggleSwitch } from "./ToggleSwitch";
 
 // styles
 import {
+  LogoImage,
   NavbarWrapper,
   SettingsWrapper,
-} from "../../styles/Header.styled";
-
-
+} from "../../styles/header.styled";
 
 const Header = ({ themeToggler }) => {
   return (
     <>
       <NavbarWrapper>
-        <Logo style={{ transform: "scale(.9)" }} />
+        <LogoImage src={logo} />
         <SettingsWrapper>
           <DropdownList />
           <ToggleSwitch themeToggler={themeToggler}>Click me</ToggleSwitch>

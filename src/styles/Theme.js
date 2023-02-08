@@ -10,18 +10,33 @@ export const colors = {
   accent: "#FF5252",
 };
 
+export const fontSize = {
+  bodyS: "14px",
+  bodyM: "18px",
+  headingS: "20px",
+  headingM: "24px",
+  headingL: "32px",
+  headingXL: "64px"
+}
+
 export const lightTheme = {
-  bg: {hex:'#ffffff', rgb: '255, 255, 255'} || '#ffffff',
+  bg: '#ffffff',
   text: colors.darkGrey,
-  inputBg: colors.lightGrey,
+  inputBg: colors.lighterGrey,
   toggleBg: colors.grey,
   icon: colors.grey,
+  boxShadow: 'rgba(31, 31, 31, 0.2)',
+  boxBg: 'white',
+  line: colors.lightGrey
 };
 
 export const darkTheme = {
-  bg: {hex:"#050505", rgb: '5,5,5'} || '#050505',
+  bg: colors.black,
   text: "#ffffff",
-  inputBg: colors.grey,
+  inputBg: colors.darkGrey,
   toggleBg: colors.primary,
   icon: colors.primary,
+  boxShadow: 'rgba(167, 51, 255, 0.8)',
+  boxBg: colors.dark,
+  line: colors.medGrey
 };
