@@ -7,7 +7,7 @@ const LogoImage = styled.img`
   }
 `
 // wrapper
-const NavbarWrapper = styled.div`
+const NavbarWrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;

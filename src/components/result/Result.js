@@ -46,11 +46,11 @@ export const Result = () => {
   return (
     <>
       {!isLoading && results ? (
-        <div>
+        <main>
           <Phonetic result={results} />
           <Meaning result={results} />
           <Source result={results} />
-        </div>
+        </main>
       ) : (
         <CenteredContainer>
           <h1>⌛</h1>

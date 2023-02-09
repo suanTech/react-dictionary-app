@@ -9,7 +9,7 @@ const ToggleSwitchLabel = styled.label`
   width: 30%;
   max-width: 80px;
 `
-const Switch = styled.div`
+const Switch = styled.span`
   width: 40px;
   height: 20px;
   background: ${colors.grey};

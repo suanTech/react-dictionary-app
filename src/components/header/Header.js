@@ -14,7 +14,7 @@ const Header = ({ themeToggler }) => {
   return (
     <>
       <NavbarWrapper>
-        <LogoImage src={logo} />
+        <LogoImage src={logo} alt="logo"/>
         <SettingsWrapper>
           <DropdownList />
           <ToggleSwitch themeToggler={themeToggler}>Click me</ToggleSwitch>

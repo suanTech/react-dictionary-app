@@ -21,7 +21,7 @@ export const Phonetic = ({ result }) => {
           </HeadingTextM>
         </div>
         <PlayBtn onClick={playAudio}>
-          <audio src={result.phonetics.filter((p, i) => i < 1)} />
+          <audio src={result.phonetics.slice(0,1).audio}/>
           <img src={playIcon} alt="play icon" />
         </PlayBtn>
       </PhoneticWrapper>

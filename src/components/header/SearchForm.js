@@ -7,7 +7,7 @@ import { BodyTextM, SearchInput } from "../../styles/text";
 import { AppContext } from "../../context/Context";
 
 export const SearchForm = () => {
-  const [searchWord, setSearchWord] = useState("Hello");
+  const [searchWord, setSearchWord] = useState("keyboard");
   const { setWord } = useContext(AppContext);
   const [error, setError] = useState(false);
 
