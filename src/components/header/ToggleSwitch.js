@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ReactComponent as MoonIcon} from './../assets/images/icon-moon.svg';
 
 // styles
 import {
@@ -23,7 +24,7 @@ export const ToggleSwitch = ({ themeToggler }) => {
         onChange={handleChange}
       />
       <Switch></Switch>
-      <StyledMoonIcon />
+      <MoonIcon className="moonIcon"/>
     </ToggleSwitchLabel>
   );
 };

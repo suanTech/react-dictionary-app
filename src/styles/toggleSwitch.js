@@ -1,8 +1,7 @@
 import styled from "styled-components"
 import { colors } from "./Theme"
-import { ReactComponent as MoonIcon} from './../assets/images/icon-moon.svg';
 
-const StyledMoonIcon = styled(MoonIcon)``;
+
 const ToggleSwitchLabel = styled.label`
   display: flex;
   justify-content: space-between;
@@ -39,9 +38,9 @@ const ToggleSwitchInput = styled.input`
       transform: translate(20px, -50%);
     }
   };
-  &:checked ~ ${StyledMoonIcon} path {
+  &:checked ~ .moonIcon path {
     stroke: ${colors.primary};
   }
 `
 
-export {ToggleSwitchLabel, ToggleSwitchInput, Switch, StyledMoonIcon}
+export {ToggleSwitchLabel, ToggleSwitchInput, Switch }
