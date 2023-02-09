@@ -1,47 +1,89 @@
-import styled, { css } from "styled-components";
-import { colors, fontSize } from "./Theme";
+import styled from "styled-components";
+import { colors, fontSize, margin } from "./Theme";
 
-const BodyTextS = css`
+// responsive font sizes
+const SmallText = styled.p`
   font-size: ${fontSize.bodyS};
+  display: inline-block;
+  border-bottom: 0.5px solid ${colors.grey};
+  &.muted {
+    color: ${colors.grey};
+  }
+`;
+const BodyTextS = styled.p`
+  font-size: ${fontSize.bodyS};
+  &.selected {
+    font-weight: bold;
+    padding: 8px;
+    &:hover {
+      color: ${colors.primary};
+    }
+  }
   @media (min-width: 768px) {
     font-size: ${fontSize.bodyM};
   }
 `;
-const HeadingTextM = css`
+const BodyTextM = styled.p`
+  font-size: 15px;
+  &.muted {
+    color: ${colors.grey};
+  }
+  &.error {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    color: ${colors.accent};
+  }
+  @media (min-width: 768px) {
+    font-size: ${fontSize.bodyM};
+    &.error {
+      top: 70px;
+    }
+`;
+const HeadingTextS = styled.p`
+  font-size: 16px;
+  margin: ${margin.m} 0 ${margin.s} 0;
+  &.muted {
+    color: ${colors.grey};
+  }
+  &.accent {
+    color: ${colors.primary};
+    font-weight: bold;
+  }
+  @media (min-width: 768px) {
+    font-size: ${fontSize.headingS};
+    margin: ${margin.xl} 0 ${margin.s} 0;
+  }
+`;
+const HeadingTextM = styled.p`
   font-size: ${fontSize.bodyM};
+  &.accent {
+    color: ${colors.primary};
+  }
   @media (min-width: 768px) {
     font-size: ${fontSize.headingM};
   }
 `;
-const HeadingTextS = css`
+
+// input text style
+const SearchInput = styled.input`
   font-size: 16px;
+  font-weight: bold;
+  color: ${({ theme }) => theme.text};
+  width: 100%;
+  ::placeholder {
+    color: ${({ theme }) => theme.grey};
+  }
   @media (min-width: 768px) {
     font-size: ${fontSize.headingS};
   }
 `;
 
-const MutedText = styled.p`
-  color: ${colors.grey};
-`;
-const SelectedFont = styled.span`
-  ${BodyTextS};
-  font-weight: bold;
-  margin-right: 15px;
-  min-width: 70px;
-  text-align: right;
-  display: inline-block;
-`;
-
-const PronunciationText = styled.p`
-  ${HeadingTextM};
-  color: ${colors.primary};
-`;
-
-const PartOfSpeech = styled.h2`
-  ${HeadingTextM};
+const PartOfSpeech = styled(HeadingTextM)`
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: ${margin.l};
+  font-weight: bold;
   &:after {
     content: "";
     flex: 1;
@@ -50,47 +92,23 @@ const PartOfSpeech = styled.h2`
     background: ${({ theme }) => theme.line};
   }
 `;
-const Heading2 = styled(MutedText)`
-  ${HeadingTextS};
-  margin: 20px 0;
-`;
 
 const StyledList = styled.li`
-  ${BodyTextS};
   display: flex;
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: ${margin.s};
   line-height: 24px;
-  &::before {
-    content: "\\2022";
-    color: ${colors.primary};
-    margin-right: 20px;
-  }
 `;
-const AccentText = styled.p`
-  ${HeadingTextS};
-  color: ${colors.primary};
-  font-weight: bold;
-`;
-const ExampleText = styled(MutedText)`
-  ${BodyTextS};
-  margin: 0 0 20px 30px;
-  font-size: 15px;
-`;
-const SourceText = styled(MutedText)`
-  font-size: 15px;
-  display: inline-block;
-  border-bottom: .5px solid ${colors.grey};
+const StyledBullet = styled.span`
+  display: block;
+  align-self: flex-start;
+  content: "";
+  min-width: 5px;
+  min-height: 5px;
+  margin: 10px 20px 10px 0;
+  border-radius: 50%;
+  background-color: ${colors.primary};
 `;
 
-export {
-  MutedText,
-  SelectedFont,
-  StyledList,
-  PronunciationText,
-  PartOfSpeech,
-  Heading2,
-  AccentText,
-  ExampleText,
-  SourceText,
-};
+
+export { SmallText, BodyTextS, BodyTextM, HeadingTextS, HeadingTextM, SearchInput, StyledList, StyledBullet, PartOfSpeech };

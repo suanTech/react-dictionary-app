@@ -5,10 +5,9 @@ import ArrowIcon from "./../../assets/images/icon-arrow-down.svg";
 import {
   DropdownWrapper,
   SelectedItemWrapper,
-  SelectListBox,
-  SelectListItems,
-} from "../../styles/header.styled";
-import { SelectedFont } from "../../styles/text.styled";
+  SelectListBox
+} from "../../styles/dropdown.styled";
+import { BodyTextS } from "../../styles/text.styled";
 
 const fontFamilies = ["Sans Serif", "Serif", "Mono"];
 
@@ -45,12 +44,13 @@ export const DropdownList = () => {
         onClick={displayDropdown}
         className={show ? "open" : ""}
       >
-        <SelectedFont>{selectedFont}</SelectedFont>
+        <BodyTextS className="selected">{selectedFont}</BodyTextS>
         <ArrowIcon style={{ marginRight: "0" }} className="arrow-icon" />
       </SelectedItemWrapper>
       <SelectListBox className={!show ? "close" : "open"}>
         {fontFamilies.map((select, i) => (
-          <SelectListItems
+          <BodyTextS 
+            className="selected"
             key={i}
             onClick={() => {
               setSelectedFont(select);
@@ -59,7 +59,7 @@ export const DropdownList = () => {
             style={{ fontFamily: changeFontFamily(select)}}
           >
               {select}
-          </SelectListItems>
+          </BodyTextS>
         ))}
       </SelectListBox>
     </DropdownWrapper>

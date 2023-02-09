@@ -19,6 +19,13 @@ export const fontSize = {
   headingXL: "64px"
 }
 
+export const margin = {
+  s: "1rem",
+  m: "1.5rem",
+  l: "2rem",
+  xl: "2.5rem"
+}
+
 export const lightTheme = {
   bg: '#ffffff',
   text: colors.darkGrey,

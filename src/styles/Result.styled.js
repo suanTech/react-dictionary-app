@@ -1,35 +1,38 @@
 import styled from "styled-components";
-import { colors } from "./Theme";
+import { colors, margin } from "./Theme";
 
 // wrapper
 const PhoneticWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: ${margin.l};
+  @media(min-width: 768px) {
+    margin-bottom: ${margin.xl};
+  }
 `;
 const MeaningWrapper = styled.div`
-  margin: 30px 0;
+  margin-top: ${margin.m};
 `;
 const ListContainer = styled.ul`
+  width: 100%;
   @media (min-width: 768px) {
-    padding-left: 20px;
+    padding: 10px 0 0 20px;
   }
 `;
 const SynonymWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: left;
-  & p {
-    margin-right: 25px;
-  }
+  gap: 25px;
 `;
 const SourceWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border-top: 1px solid ${({ theme }) => theme.line};
-  padding: 20px 0;
+  margin-top: 35px;
+  padding: 25px 0;
   gap: 10px;
   @media (min-width: 768px) {
     flex-direction: row;

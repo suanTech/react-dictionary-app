@@ -7,7 +7,8 @@ const ToggleSwitchLabel = styled.label`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  width: 30%;
+  max-width: 80px;
 `
 const Switch = styled.div`
   width: 40px;

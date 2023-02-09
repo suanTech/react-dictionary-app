@@ -1,5 +1,15 @@
-import { ListContainer, MeaningWrapper, SynonymWrapper } from "../../styles/result.styled";
-import { AccentText, ExampleText, Heading2, PartOfSpeech, StyledList } from "../../styles/text.styled";
+import {
+  ListContainer,
+  MeaningWrapper,
+  SynonymWrapper,
+} from "../../styles/result.styled";
+import {
+  BodyTextM,
+  HeadingTextS,
+  PartOfSpeech,
+  StyledBullet,
+  StyledList,
+} from "../../styles/text.styled";
 
 export const Meaning = ({ result }) => {
   return (
@@ -9,12 +19,12 @@ export const Meaning = ({ result }) => {
           return (
             <MeaningWrapper key={i}>
               <PartOfSpeech>{meaning.partOfSpeech}</PartOfSpeech>
-              <Heading2>Meaning</Heading2>
+              <HeadingTextS className="muted">Meaning</HeadingTextS>
               <MeaningList definitions={meaning.definitions} />
               {meaning.synonyms.length ? (
                 <SynonymWrapper>
-                  <Heading2>Synonyms</Heading2>
-                  <AccentText>{meaning.synonyms.slice(0, 1)}</AccentText>
+                  <HeadingTextS className="muted">Synonyms</HeadingTextS>
+                  <HeadingTextS className="accent">{meaning.synonyms.slice(0, 1)}</HeadingTextS>
                 </SynonymWrapper>
               ) : (
                 ""
@@ -30,18 +40,15 @@ export const Meaning = ({ result }) => {
 const MeaningList = ({ definitions }) => {
   return (
     <>
-      <ListContainer>
-        {definitions.map((def, index) => (
-          <div key={index}>
-            <StyledList>{def.definition}</StyledList>
-            {def.example ? (
-              <ExampleText>"{def.example}"</ExampleText>
-            ) : (
-              ""
-            )}
-          </div>
-        ))}
-      </ListContainer>
+      {definitions.map((def, index) => (
+        <ListContainer key={index}>
+          <StyledList>
+            <StyledBullet />
+            <BodyTextM>{def.definition}</BodyTextM>
+          </StyledList>
+          {def.example ? <BodyTextM className="muted" style={{marginLeft: '20px'}}>"{def.example}"</BodyTextM> : ""}
+        </ListContainer>
+      ))}
     </>
   );
 };

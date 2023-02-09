@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AppContextProvider } from "./context/Context";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/header/Header";
@@ -15,6 +15,15 @@ function App() {
   const themeToggler = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
+  useEffect(() => {
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+  
+    if (prefersDark) {
+      setTheme("dark");
+    }
+  }, []);
 
   return (
     <AppContextProvider>

@@ -3,7 +3,7 @@ import { PlayBtn } from "../../styles/buttons.styled";
 
 // style
 import { PhoneticWrapper } from "../../styles/result.styled";
-import { PronunciationText } from "../../styles/text.styled";
+import { HeadingTextM } from "../../styles/text.styled";
 
 export const Phonetic = ({ result }) => {
   const playAudio = () => {
@@ -16,9 +16,9 @@ export const Phonetic = ({ result }) => {
         <div>
           <h1>{result.word}</h1>
           {console.log(result.word)}
-          <PronunciationText>
-            {result.phonetic ? result.phonetic : result.phonetics[1].text}
-          </PronunciationText>
+          <HeadingTextM className="accent">
+            {(result.phonetic || result.phonetics.length>1) ? (result.phonetic || result.phonetics[1].text) : ''}
+          </HeadingTextM>
         </div>
         <PlayBtn onClick={playAudio}>
           <audio src={result.phonetics.filter((p, i) => i < 1)} />

@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import { fontSize } from "./Theme";
 
 export const GlobalStyles = createGlobalStyle`
-
   body {
     background-color: ${({ theme }) => theme.bg};
     color: ${({ theme }) => theme.text};
@@ -16,13 +15,14 @@ export const GlobalStyles = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: ${({theme}) => theme.text};
+    color: ${({ theme }) => theme.text};
   }
   h1 {
     font-size: ${fontSize.headingL};
     margin-bottom: 8px;
     @media (min-width: 768px){
-      font-size: ${fontSize.headingXL}
+      font-size: ${fontSize.headingXL};
+      margin-top: 20px;
     }
   }
   h2 {

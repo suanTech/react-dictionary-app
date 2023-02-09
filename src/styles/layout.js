@@ -9,3 +9,11 @@ export const AppContainer = styled.div`
     padding: 0 20px;
   }
 `
+export const CenteredContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60vh;
+`

@@ -6,11 +6,14 @@ import { Meaning } from "./Meaning";
 import newWindowIcon from "./../../assets/images/icon-new-window.svg?url";
 
 // style
-import { SourceText } from "../../styles/text.styled";
+import { SmallText } from "../../styles/text.styled";
 import { LinkContainer, SourceWrapper } from "../../styles/result.styled";
+import { NotFound } from "./NotFound";
+import { CenteredContainer } from "../../styles/layout";
 
 export const Result = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
   const { word } = useContext(AppContext);
   const [results, setResults] = useState(null);
 
@@ -24,8 +27,10 @@ export const Result = () => {
       console.log(data);
       setResults(data);
       setIsLoading(false);
+      setError(null);
     } catch (error) {
       console.error(error);
+      setError(error);
       setIsLoading(false);
     }
   };
@@ -35,18 +40,22 @@ export const Result = () => {
     }
   }, [word]);
 
+  if (error) {
+    return <NotFound />;
+  }
   return (
     <>
-      {!isLoading ? (
-        results && (
-          <div>
-            <Phonetic result={results} />
-            <Meaning result={results} />
-            <Source result={results} />
-          </div>
-        )
+      {!isLoading && results ? (
+        <div>
+          <Phonetic result={results} />
+          <Meaning result={results} />
+          <Source result={results} />
+        </div>
       ) : (
-        <div className="loadingOverlay">please wait...</div>
+        <CenteredContainer>
+          <h1>⌛</h1>
+          <h1>Please wait...</h1>
+        </CenteredContainer>
       )}
     </>
   );
@@ -55,12 +64,14 @@ export const Result = () => {
 const Source = ({ result }) => {
   return (
     <SourceWrapper>
-      <SourceText>Source</SourceText>
+      <SmallText className="muted">Source</SmallText>
       <LinkContainer>
-        <p><a href={result.sourceUrls[0]} target="_blank" rel="noreferrer">
-          {result.sourceUrls[0]}
-        </a></p>
-        <img src={newWindowIcon} alt="new window icon"/>
+        <SmallText>
+          <a href={result.sourceUrls[0]} target="_blank" rel="noreferrer">
+            {result.sourceUrls[0]}
+          </a>
+        </SmallText>
+        <img src={newWindowIcon} alt="new window icon" />
       </LinkContainer>
     </SourceWrapper>
   );
