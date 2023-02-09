@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import SearchIcon from "../../assets/images/icon-search.svg";
+import searchIcon from "../../assets/images/icon-search.svg?url";
 
 // styles
 import { StyledForm } from "../../styles/form";
@@ -40,7 +40,7 @@ export const SearchForm = () => {
           onChange={handleInputChange}
         />
         <button type="submit">
-          <SearchIcon />
+          <img src={searchIcon} alt="search icon"/>
         </button>
         {error ? <BodyTextM className="error">Whoops, can't be empty...</BodyTextM> : ""}
       </StyledForm>

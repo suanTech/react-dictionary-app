@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { colors } from "./Theme"
-import MoonIcon from './../assets/images/icon-moon.svg';
+import { ReactComponent as MoonIcon} from './../assets/images/icon-moon.svg';
 
 const StyledMoonIcon = styled(MoonIcon)``;
 const ToggleSwitchLabel = styled.label`

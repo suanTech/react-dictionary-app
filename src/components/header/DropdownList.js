@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ArrowIcon from "../../assets/images/icon-arrow-down.svg";
+import { ReactComponent as ArrowIcon} from "../../assets/images/icon-arrow-down.svg";
 
 // styles
 import {
