@@ -96,7 +96,7 @@ const PartOfSpeech = styled(HeadingTextM)`
 const StyledList = styled.li`
   display: flex;
   position: relative;
-  margin-bottom: ${margin.s};
+  margin-bottom: 5px;
   line-height: 24px;
 `;
 const StyledBullet = styled.span`
