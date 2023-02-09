@@ -12,7 +12,7 @@ import {
 
 const Header = ({ themeToggler }) => {
   return (
-    <>
+    <header>
       <NavbarWrapper>
         <LogoImage src={logo} alt="logo"/>
         <SettingsWrapper>
@@ -21,7 +21,7 @@ const Header = ({ themeToggler }) => {
         </SettingsWrapper>
       </NavbarWrapper>
       <SearchForm />
-    </>
+    </header>
   );
 };
 
