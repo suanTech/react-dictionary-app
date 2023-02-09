@@ -10,7 +10,7 @@ const rollDown = keyframes`
   to {
     transform: translateY(0);
     opacity: 1;
-    height: 35vh;
+    height: 12rem;
     max-height: 152px;
   }
 `;
@@ -30,9 +30,8 @@ const SelectListBox = styled.div`
   cursor: pointer;
   right: 20px;
   top: 45px;
-  width: 32vw;
-  max-width: 180px;
-  height: 35vh;
+  width: 8rem;
+  height: 12rem;
   max-height: 152px;
   padding: 10px 0 10px 15px;
   overflow: hidden;
@@ -48,6 +47,10 @@ const SelectListBox = styled.div`
   }
   &.open {
     animation: ${rollDown} 0.2s ease-in;
+  }
+  @media(min-width: 768px) {
+    width: 180px;
+    height: 152px;
   }
 `;
 const SelectedItemWrapper = styled.div`

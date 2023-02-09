@@ -23,7 +23,7 @@ const BodyTextS = styled.p`
     font-size: ${fontSize.bodyM};
   }
 `;
-const BodyTextM = styled.p`
+const BodyTextM = styled.span`
   font-size: 15px;
   &.muted {
     color: ${colors.grey};
