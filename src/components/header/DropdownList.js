@@ -6,8 +6,8 @@ import {
   DropdownWrapper,
   SelectedItemWrapper,
   SelectListBox
-} from "../../styles/dropdown.styled";
-import { BodyTextS } from "../../styles/text.styled";
+} from "../../styles/dropdown";
+import { BodyTextS } from "../../styles/text";
 
 const fontFamilies = ["Sans Serif", "Serif", "Mono"];
 

@@ -6,8 +6,8 @@ import { Meaning } from "./Meaning";
 import newWindowIcon from "./../../assets/images/icon-new-window.svg?url";
 
 // style
-import { SmallText } from "../../styles/text.styled";
-import { LinkContainer, SourceWrapper } from "../../styles/result.styled";
+import { SmallText } from "../../styles/text";
+import { LinkContainer, SourceWrapper } from "../../styles/result";
 import { NotFound } from "./NotFound";
 import { CenteredContainer } from "../../styles/layout";
 

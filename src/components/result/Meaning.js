@@ -2,14 +2,14 @@ import {
   ListContainer,
   MeaningWrapper,
   SynonymWrapper,
-} from "../../styles/result.styled";
+} from "../../styles/result";
 import {
   BodyTextM,
   HeadingTextS,
   PartOfSpeech,
   StyledBullet,
   StyledList,
-} from "../../styles/text.styled";
+} from "../../styles/text";
 
 export const Meaning = ({ result }) => {
   return (

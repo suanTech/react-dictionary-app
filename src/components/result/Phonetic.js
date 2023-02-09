@@ -1,9 +1,9 @@
 import playIcon from "../../assets/images/icon-play.svg?url";
-import { PlayBtn } from "../../styles/buttons.styled";
+import { PlayBtn } from "../../styles/button";
 
 // style
-import { PhoneticWrapper } from "../../styles/result.styled";
-import { HeadingTextM } from "../../styles/text.styled";
+import { PhoneticWrapper } from "../../styles/result";
+import { HeadingTextM } from "../../styles/text";
 
 export const Phonetic = ({ result }) => {
   const playAudio = () => {

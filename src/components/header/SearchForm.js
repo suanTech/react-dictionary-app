@@ -2,8 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import SearchIcon from "../../assets/images/icon-search.svg";
 
 // styles
-import { StyledForm } from "../../styles/form.styled";
-import { BodyTextM, SearchInput } from "../../styles/text.styled";
+import { StyledForm } from "../../styles/form";
+import { BodyTextM, SearchInput } from "../../styles/text";
 import { AppContext } from "../../context/Context";
 
 export const SearchForm = () => {

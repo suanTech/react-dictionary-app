@@ -8,7 +8,7 @@ import {
   LogoImage,
   NavbarWrapper,
   SettingsWrapper,
-} from "../../styles/header.styled";
+} from "../../styles/header.js";
 
 const Header = ({ themeToggler }) => {
   return (

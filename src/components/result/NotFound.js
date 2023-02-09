@@ -1,5 +1,5 @@
 import { CenteredContainer } from "../../styles/layout";
-import { BodyTextM } from "../../styles/text.styled";
+import { BodyTextM } from "../../styles/text";
 
 export const NotFound = () => {
   return (
