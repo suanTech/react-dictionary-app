@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { ReactComponent as MoonIcon} from './../assets/images/icon-moon.svg';
+import { ReactComponent as MoonIcon} from "../../assets/images/icon-moon.svg";
 
 // styles
 import {
-  StyledMoonIcon,
   Switch,
   ToggleSwitchInput,
   ToggleSwitchLabel,
