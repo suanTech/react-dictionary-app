@@ -24,7 +24,9 @@ export const Meaning = ({ result }) => {
               {meaning.synonyms.length ? (
                 <SynonymWrapper>
                   <HeadingTextS className="muted">Synonyms</HeadingTextS>
-                  <HeadingTextS className="accent">{meaning.synonyms.slice(0, 1)}</HeadingTextS>
+                  <HeadingTextS className="accent">
+                    {meaning.synonyms.slice(0, 1)}
+                  </HeadingTextS>
                 </SynonymWrapper>
               ) : (
                 ""
@@ -42,11 +44,19 @@ const MeaningList = ({ definitions }) => {
     <>
       {definitions.map((def, index) => (
         <ListContainer key={index}>
-          <StyledList>
+          <StyledList className="main">
             <StyledBullet />
             <BodyTextM>{def.definition}</BodyTextM>
           </StyledList>
-          {def.example ? <BodyTextM className="muted" style={{marginLeft: '20px'}}>"{def.example}"</BodyTextM> : ""}
+          {def.example ? (
+            <StyledList className="sub">
+              <BodyTextM className="muted">
+                "{def.example}"
+              </BodyTextM>
+            </StyledList>
+          ) : (
+            ""
+          )}
         </ListContainer>
       ))}
     </>

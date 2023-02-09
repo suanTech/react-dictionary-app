@@ -96,8 +96,13 @@ const PartOfSpeech = styled(HeadingTextM)`
 const StyledList = styled.li`
   display: flex;
   position: relative;
-  margin-bottom: 5px;
-  line-height: 24px;
+  &.main {
+    margin-bottom: 5px;
+    line-height: 24px;
+  }
+  &.sub {
+    margin-left: 20px;
+  }
 `;
 const StyledBullet = styled.span`
   display: block;
@@ -110,5 +115,14 @@ const StyledBullet = styled.span`
   background-color: ${colors.primary};
 `;
 
-
-export { SmallText, BodyTextS, BodyTextM, HeadingTextS, HeadingTextM, SearchInput, StyledList, StyledBullet, PartOfSpeech };
+export {
+  SmallText,
+  BodyTextS,
+  BodyTextM,
+  HeadingTextS,
+  HeadingTextM,
+  SearchInput,
+  StyledList,
+  StyledBullet,
+  PartOfSpeech,
+};
