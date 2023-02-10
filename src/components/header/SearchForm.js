@@ -28,7 +28,7 @@ export const SearchForm = () => {
       setError(false);
     }, 3000);
     return () => clearTimeout(timeOut);
-  }, []);
+  }, [error]);
 
   return (
     <>

@@ -7,8 +7,8 @@ import { HeadingTextM } from "../../styles/text";
 
 export const Phonetic = ({ result }) => {
   const playAudio = () => {
-    const audio = new Audio(result.phonetics.find(phonetic => phonetic.audio.length > 0).audio);
-    audio.play();
+    const audio = new Audio(result.phonetics.find(phonetic => phonetic.audio.length > 0)?.audio);
+    audio.play()
   };
   return (
     <>
@@ -17,7 +17,7 @@ export const Phonetic = ({ result }) => {
           <h1>{result.word}</h1>
           {console.log(result.word)}
           <HeadingTextM className="accent">
-            {(result.phonetic || result.phonetics.length>1) ? (result.phonetic || result.phonetics[1].text) : ''}
+            {(result.phonetic || result.phonetics.find(phonetic => phonetic.text.length > 0).text)}
           </HeadingTextM>
         </div>
         <PlayBtn onClick={playAudio}>
