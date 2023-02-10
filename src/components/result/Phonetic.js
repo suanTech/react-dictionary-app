@@ -10,7 +10,7 @@ export const Phonetic = ({ result }) => {
     const audio = new Audio(result.phonetics.find(phonetic => phonetic.audio.length > 0)?.audio);
     audio.play()
   };
-  const phonetic = result.phonetic || result.phonetics.find(phonetic => phonetic.text).text;
+  const phonetic = result.phonetic || result.phonetics.find(phonetic => phonetic.text)?.text;
   return (
     <>
       <PhoneticWrapper>
