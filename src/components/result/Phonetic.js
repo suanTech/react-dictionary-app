@@ -7,7 +7,7 @@ import { HeadingTextM } from "../../styles/text";
 
 export const Phonetic = ({ result }) => {
   const playAudio = () => {
-    const audio = new Audio(result.phonetics[0].audio);
+    const audio = new Audio(result.phonetics.find(phonetic => phonetic.audio.length > 0).audio);
     audio.play();
   };
   return (
@@ -21,7 +21,6 @@ export const Phonetic = ({ result }) => {
           </HeadingTextM>
         </div>
         <PlayBtn onClick={playAudio}>
-          <audio src={result.phonetics.slice(0,1).audio}/>
           <img src={playIcon} alt="play icon" />
         </PlayBtn>
       </PhoneticWrapper>
