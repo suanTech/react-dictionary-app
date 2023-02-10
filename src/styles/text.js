@@ -25,6 +25,7 @@ const BodyTextS = styled.p`
 `;
 const BodyTextM = styled.span`
   font-size: 15px;
+  margin: 5px 0;
   &.muted {
     color: ${colors.grey};
   }
