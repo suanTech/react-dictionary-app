@@ -1,5 +1,5 @@
 import { SearchForm } from "./SearchForm";
-import logo from "./../../logo.svg?url";
+import logo from "../../assets/images/logo.svg";
 import { DropdownList } from "./DropdownList";
 import { ToggleSwitch } from "./ToggleSwitch";
 
