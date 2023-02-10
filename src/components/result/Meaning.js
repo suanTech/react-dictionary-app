@@ -15,25 +15,26 @@ export const Meaning = ({ result }) => {
   return (
     <>
       {result.meanings.map((meaning, i) => {
-        if (i < 2) {
-          return (
-            <MeaningWrapper key={i}>
-              <PartOfSpeech>{meaning.partOfSpeech}</PartOfSpeech>
-              <HeadingTextS className="muted">Meaning</HeadingTextS>
-              <MeaningList definitions={meaning.definitions} />
-              {meaning.synonyms.length ? (
-                <SynonymWrapper>
-                  <HeadingTextS className="muted">Synonyms</HeadingTextS>
-                  <HeadingTextS className="accent">
-                    {meaning.synonyms.slice(0, 1)}
-                  </HeadingTextS>
-                </SynonymWrapper>
-              ) : (
-                ""
-              )}
-            </MeaningWrapper>
-          );
-        } else return null;
+        if (i > 1) {
+          return null;
+        }
+        return (
+          <MeaningWrapper key={i}>
+            <PartOfSpeech>{meaning.partOfSpeech}</PartOfSpeech>
+            <HeadingTextS className="muted">Meaning</HeadingTextS>
+            <MeaningList definitions={meaning.definitions} />
+            {meaning.synonyms.length ? (
+              <SynonymWrapper>
+                <HeadingTextS className="muted">Synonyms</HeadingTextS>
+                <HeadingTextS className="accent">
+                  {meaning.synonyms.slice(0, 1)}
+                </HeadingTextS>
+              </SynonymWrapper>
+            ) : (
+              ""
+            )}
+          </MeaningWrapper>
+        );
       })}
     </>
   );
@@ -48,14 +49,10 @@ const MeaningList = ({ definitions }) => {
             <StyledBullet />
             <BodyTextM>{def.definition}</BodyTextM>
           </StyledList>
-          {def.example ? (
+          {def.example && (
             <StyledList className="sub">
-              <BodyTextM className="muted">
-                "{def.example}"
-              </BodyTextM>
+              <BodyTextM className="muted">"{def.example}"</BodyTextM>
             </StyledList>
-          ) : (
-            ""
           )}
         </ListContainer>
       ))}
