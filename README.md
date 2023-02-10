@@ -12,6 +12,7 @@ A simple but stylish dictionary web app built with React, styled component and R
 * Detects user's prefers-color-scheme and set theme accordingly
 * Style body fonts
 * Completely responsive 🙌
+* Smooth transition applied to dropdown, theme toggler using css animation and transition properties
 
 ## Tech Stack
 ![techStack](https://imgur.com/S9LD41o.png)
