@@ -12,20 +12,36 @@ const PhoneticWrapper = styled.div`
   }
 `;
 const MeaningWrapper = styled.div`
-  margin-top: ${margin.m};
+  margin-top: ${margin.l};
 `;
-const ListContainer = styled.ul`
+const ListContainer = styled.div`
   width: 100%;
+  margin-top: .8rem;
+  & > ul {
+    line-height: 3vh;
+  }
   @media (min-width: 768px) {
-    padding: 10px 0 0 20px;
+    margin-top: 1.2rem;
   }
 `;
 const SynonymWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: left;
   gap: 25px;
+  width: 100%;
+  margin: ${margin.m} 0 ${margin.s} 0;
+  @media(min-width: 768px) {
+    margin: ${margin.l} 0 ${margin.xl} 0;
+  }
 `;
+const SynonymContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 85%;
+  flex-wrap: wrap;
+`
 const SourceWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -58,6 +74,7 @@ export {
   ListContainer,
   MeaningWrapper,
   SynonymWrapper,
+  SynonymContainer,
   SourceWrapper,
   LinkContainer,
 };
