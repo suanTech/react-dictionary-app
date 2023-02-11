@@ -29,7 +29,7 @@ code {
 }
 
 @font-face {
-  font-family: "inconsolata", monospace;
+  font-family: "inconsolata";
   src: local("Inconsolata"),
     url("./assets/fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf")
       format("truetype");
