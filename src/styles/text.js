@@ -43,7 +43,6 @@ const BodyTextM = styled.span`
 `;
 const HeadingTextS = styled.p`
   font-size: 16px;
-  margin: ${margin.m} 0 ${margin.s} 0;
   &.muted {
     color: ${colors.grey};
   }
@@ -53,7 +52,6 @@ const HeadingTextS = styled.p`
   }
   @media (min-width: 768px) {
     font-size: ${fontSize.headingS};
-    margin: ${margin.xl} 0 ${margin.s} 0;
   }
 `;
 const HeadingTextM = styled.p`
@@ -92,17 +90,23 @@ const PartOfSpeech = styled(HeadingTextM)`
     height: 1px;
     background: ${({ theme }) => theme.line};
   }
+  @media (min-width: 768px) {
+    margin-bottom: ${margin.xl};
+  }
 `;
 
 const StyledList = styled.li`
   display: flex;
   position: relative;
+  line-height: 24px;
   &.main {
     margin-bottom: 5px;
-    line-height: 24px;
   }
   &.sub {
     margin-left: 20px;
+  }
+  @media (min-width: 768px) {
+    padding-left: 20px;
   }
 `;
 const StyledBullet = styled.span`
@@ -111,7 +115,7 @@ const StyledBullet = styled.span`
   content: "";
   min-width: 5px;
   min-height: 5px;
-  margin: 10px 20px 10px 0;
+  margin: 15px 20px 10px 0;
   border-radius: 50%;
   background-color: ${colors.primary};
 `;
