@@ -1,22 +1,41 @@
 # Dictionary App
 
 ** This is a dictionary app built for coding challenge on Frontend mentor **
+### Requirement
+* Search for words using the input field
+* See the Free Dictionary API's response for the searched word
+* See a form validation message when trying to submit a blank form
+* Play the audio file for a word when it's available
+* Switch between serif, sans serif, and monospace fonts
+* Switch between light and dark themes
+* View the optimal layout for the interface depending on their device's screen size
+* See hover and focus states for all interactive elements on the page
+* Bonus: Have the correct color scheme chosen for them based on their computer preferences. Hint: Research prefers-color-scheme in CSS.
+
 
 ## Introduction
 
 A simple but stylish dictionary web app built with React, styled component and REST API.
 
-## 🗝️ Features
-* Search term 
-* Toggle dark/light mode
-* Detects user's prefers-color-scheme and set theme accordingly
-* Style body fonts
-* Completely responsive 🙌
-* Smooth transition applied to dropdown, theme toggler using css animation and transition properties
+## Screenshots
+![screenshot](https://imgur.com/a/f3H0YpN.png)
 
-## Tech Stack
+
+## 🗝️ Features
+
+* Fetch API using axios
+* Error management - Form validation, Not found component
+* Apply Global Styles and Theme to manage consistent styling
+* Smooth dropdown animation using CSS keyframes
+* Toggle switch to chanage between dark/light mode
+* Detects user's prefers-color-scheme and set theme accordingly
+* Change body fonts with dropdown menu using useEffect
+* Smooth transition applied throughout the app
+* Completely responsive 🙌
+
+## 🛠️ Tech Stack
 ![techStack](https://imgur.com/S9LD41o.png)
 
-## Future Challenge
-* Testing app (Done/Not done*)
-* Save Favorite term (Done/Not done*)
+## 🔜 Future Challenge
+* Testing app 
+* Save Favorite term 
