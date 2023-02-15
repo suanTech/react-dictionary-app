@@ -18,7 +18,7 @@
 A simple but stylish dictionary web app built with React, styled component and REST API.
 
 ## Screenshots
-![screenshot](https://imgur.com/a/f3H0YpN.png)
+![screenshot](https://imgur.com/LA96kV6.png)
 
 
 ## 🗝️ Features
