@@ -1,6 +1,8 @@
 # Dictionary App
 
 ** This is a dictionary app built for coding challenge on Frontend mentor **
+* check out the challenge [here](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL)
+* live demo [here](https://dictionary-web-app-react.netlify.app)
 ### Requirement
 * Search for words using the input field
 * See the Free Dictionary API's response for the searched word
